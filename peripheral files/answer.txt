@@ -1,0 +1,276 @@
+/Users/sota/Desktop/App Development Hobby/curriculum/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+UR Chatbot — type 'quit' to exit
+
+Question: 
+Answer:
+The provided context does not include specific details about the undergraduate academic probation policy or the GPA required to get off it. For more information on this topic, please check the University of Rochester's official resources or contact the appropriate academic office.
+
+Question: 
+Answer:
+The provided context does not contain information specifically about the refund schedule for undergraduate students who drop a course mid-semester. It only includes details about the refund schedule for graduate students. For more information on undergraduate policies, you may want to check the University of Rochester's Bursar's Office or academic resources. You can visit the sources provided, such as the Bursar's payment and refunds page at https://rochester.edu/adminfinance/bursar/payments-and-refunds/payments-and-refunds for more details.
+
+Question: 
+Answer:
+To file a formal grievance or complaint against a faculty member at the University of Rochester regarding academic accommodations, you would follow the formal grievance procedure outlined in Policy 106 – Policy Against Discrimination and Harassment. This allows you to challenge decisions related to accommodations.
+
+If the complaint involves grading concerns, you should follow the guidelines provided in the syllabus or by the course instructor for a grade appeal or you can request a formal review by submitting a complaint form if a satisfactory resolution is not reached.
+
+For more specific information on the processes and how to submit a complaint, you may refer to the respective policy documentation or visit [this source](https://rochester.edu/disability/policies) for disability accommodations or [this source](https://rochester.edu/college/summer/resources/exams-grades.html) for grading issues.
+
+Question: 
+Answer:
+The provided context does not specify any free software licenses available to all University of Rochester students through IT services. For more specific information, you may want to check the University IT resources directly at [University IT](https://warner.rochester.edu/students/technology/email).
+
+Question: 
+Answer:
+At the University of Rochester, the grading policy requires that undergraduate students earn a grade of C or better to transfer credit back to the university. Grades earned from courses taught by University of Rochester faculty appear on the transcript and are included in the GPA calculation. Conversely, grades from courses taken on Rochester programs or non-Rochester programs do not appear on the University of Rochester transcript and do not count toward the GPA.
+
+The grading scheme for undergraduate courses includes the following letter grades:
+
+- A: Excellent
+- A-: 
+- B+: 
+- B: Above average
+- B-: 
+- C+: 
+- C: Minimum satisfactory grade
+- C-: 
+- D+: Not used by Hajim School of Engineering and Applied Sciences
+- D: 
+- D-: Minimum passing grade (not used by Hajim School of Engineering and Applied Sciences)
+- E: Failure
+- XE: Failure due to academic dishonesty
+- I: Incomplete
+- W: Withdrawal
+
+For a detailed overview of how grades and GPA are calculated, please refer to the source: [University of Rochester Grading and Course Loads](https://rochester.edu/education-abroad/academic-processes/grading-course-loads).
+
+Question: 
+Answer:
+The provided context does not include specific information about the programs and services offered by the Office of Minority Student Affairs. Therefore, I cannot answer your question based on the available information. For more details, I recommend checking the university's official resources or website.
+
+Question: 
+Answer:
+The specific fraternities and sororities currently recognized at the University of Rochester include:
+
+1. Alpha Phi (ΑΦ)
+2. Chi Omega (ΧΩ)
+3. Delta Gamma (ΔΓ)
+4. Gamma Phi Beta (ΓΦΒ)
+5. Kappa Delta (ΚΔ)
+6. Sigma Delta Tau (ΣΔΤ)
+
+You can find more details about the Panhellenic Association and these organizations on the University of Rochester's website [here](https://rochester.edu/college/fsa/students/panhel.html).
+
+Question: 
+Answer:
+The e5 (Experiential-Five) Program at the University of Rochester offers a unique opportunity for select students—a fifth, tuition-free year to turn their ideas into action, particularly focused on entrepreneurship. This program is open to all undergraduates in the College and the Eastman School of Music, with some exceptions (e.g., transfer students may not apply during their first semester, and seniors may only apply during their first term).
+
+To participate in the e5 program, you need to complete the following application requirements:
+
+1. Proposed e5 Course Schedule
+2. e5 Advisor
+3. One-Page Action Plan
+4. Essay
+5. Resume
+6. Two Letters of Recommendation (One must be an academic recommendation from a full-time faculty member at UR)
+
+Qualified students can plan to dedicate up to an entire academic year to internships, special projects, relevant coursework, business plan development, research on entrepreneurship, or analysis of cultural and public policy influences on entrepreneurial activities.
+
+For more information on how to apply and further details, you can visit the e5 page on the Ain Center for Entrepreneurship website: [e5 Program Details](https://rochester.edu/aincenter/e5).
+
+Question: 
+Answer:
+The Hajim School's BS in Computer Science requires a total of 128 credit hours, which include core courses, additional math courses, advanced computer science courses, cluster courses, free electives, and writing requirements. Specifically, students must first complete pre-major requirements with a GPA of at least 2.0, including courses such as Introduction to Computer Science, Discrete Mathematics, and Data Structures and Algorithms.
+
+In contrast, the BA in Computer Science requires fewer core courses—three in total—and six computer science major electives. The core courses include options such as Computation and Formal Systems and Computer Organization. The BA program is designed to provide more flexibility in course selection compared to the BS.
+
+For detailed information, you can refer to the following sources:
+- BS requirements: [BS Requirements](https://cs.rochester.edu/undergraduate/bs-requirements.html)
+- BA requirements: [BA Requirements](https://cs.rochester.edu/undergraduate/ba-requirements.html)
+
+Question: 
+Answer:
+You can request a transcript from the University of Rochester through a partnership with the National Student Clearinghouse (NSC). You can order both electronic and hard copy transcripts online through the NSC Transcript Ordering Center. Electronic transcripts are securely delivered within one business day of your order completion, while hard copy transcripts are sent within three to five business days.
+
+To validate your request, you will need to provide either your URID or Social Security number. You can also track your transcript order online and receive updates via email or text messages. For additional details and to place your order, please visit the transcript request page at [https://rochester.edu/registrar/requests/transcripts.html](https://rochester.edu/registrar/requests/transcripts.html).
+
+Question: 
+Answer:
+The context provided does not specifically address the University of Rochester's policy on academic integrity for online exams. It contains general information about academic honesty, exam tips, and instructor responsibilities, but it does not elaborate on the unique requirements or expectations specific to online exams. For further details, you could refer to the academic honesty resources available at the University of Rochester website: https://rochester.edu/college/honesty/policy/index.html.
+
+Question: 
+Answer:
+The information provided does not explicitly mention a "gap year," but it does cover the process of taking a leave of absence and returning to the University. If a student wishes to take a leave of absence, they must initiate the process well in advance and submit a Return from University Leave of Absence form through their academic advisor or similar role. Requests for return must be received by March 1 for the fall semester and October 1 for the spring semester. After three consecutive semesters of leave, students who do not return may be subject to a University Withdrawal.
+
+For specific steps on returning after a leave of absence, students should consult with their academic advisor or refer to the detailed procedures on the university's leave of absence and withdrawal page.
+
+For more details, you can refer to the source: [University of Rochester Leave of Absence and Withdrawal](https://rochester.edu/registrar/students/leave-of-absence-and-withdrawal.html).
+
+Question: 
+Answer:
+Outside of normal business hours, there is a UCC professional on-call to address urgent mental health crises and emergencies. You can reach them by calling the main office number. Additionally, health support is available 24/7 for mental health crises via text or phone through a mobile app or online chat. Counselors in Residence are also available overnight and on weekends during the academic year to assist with mental health-related calls. For immediate concerns that threaten life or safety, you should call Public Safety or 911. 
+
+For more details, you can visit [Crisis Services - University Health Service](https://rochester.edu/uhs/ucc/crisis-services).
+
+Question: 
+Answer:
+The David T. Kearns Center offers various guidance, scholarship, and support services to a diverse student body, including pre-college programs for high school students and college programs for undergraduate students. 
+
+**Pre-College Programs:**
+1. **Upward Bound (Classic)**: Supports first-generation and income-eligible students at East High School and Monroe High School in navigating the college application and entry process.
+2. **Educational Talent Search (ETS)**: Provides academic, career, and financial counseling to first-generation and income-eligible students at East High School and Padilla High School, motivating them to graduate from high school and pursue further education.
+
+**College Programs:**
+1. **Ronald E. McNair Post-Baccalaureate Achievement Program**: Aims to increase the number of income-eligible, first-generation, and underserved college students pursuing PhD degrees.
+2. **Student Support Services (SSS)**: Provides support for first-generation and income-eligible college students working toward completing their undergraduate degrees.
+3. **Kearns Scholars Program**: Offers dedicated support for first-generation college students at the University of Rochester.
+
+Eligibility primarily includes being a first-generation or income-eligible student, but each program has specific criteria and application deadlines.
+
+For more details, you can visit [the Kearns Center website](https://rochester.edu/college/kearnscenter/index.html).
+
+Question: 
+Answer:
+The Rochester Curriculum requires students to complete a cluster in two out of three academic divisions: Humanities, Social Sciences, and Natural Sciences and Engineering. Here are the key details about how the cluster requirement works:
+
+1. **Cluster Composition**: Each cluster consists of thematically related courses, requiring a minimum of twelve credits, which is typically equivalent to three courses.
+
+2. **Divisional Structure**: Students must choose clusters from the two divisions they are not majoring in. For example, if a student is majoring in Natural Sciences and Engineering, they need to complete clusters in both Humanities and Social Sciences.
+
+3. **Course Restrictions**: Students cannot use the same course to fulfill the requirements of two different clusters. Additionally, students are not allowed to use the Ethics and Values Cluster from the Philosophy department if they plan to use the Logic Cluster from the same department to fulfill Natural Sciences requirements.
+
+4. **Cluster Policies**: The average grade within the cluster must be C or better to meet the requirements.
+
+5. **Course Work Location**: Typically, only courses taken at the University of Rochester can count toward cluster requirements. However, courses taken during a study abroad program may count if approved by the department offering the cluster.
+
+For more details, you can visit the [Cluster Policies page](https://rochester.edu/college/ccas/undergraduate/curriculum/clusters.html).
+
+Question: 
+Answer:
+Yes, you can pursue a certificate or citation program alongside your major at the University of Rochester. To enroll in a certificate program, you should research the coursework needed for your intended certificate area, and then meet with the departmental advisor of that particular certificate to obtain final approval. After that, you must complete the appropriate paperwork to receive credit for the certificate at the College’s Center for Academic Support.
+
+Regarding the Citation for Achievement in College Leadership, starting in fall 2025, it will be renamed the “Certificate in Educational Leadership,” which highlights its focus on education.
+
+For more details, you can refer to the respective pages regarding certificates and citations at the University of Rochester.
+
+Question: 
+Answer:
+The University of Rochester offers the Food Pantry, which is dedicated to addressing student food insecurity on campus. It is available to all students and postdocs, and it operates on a need-blind basis without requiring income or financial aid information. Students who are food insecure or facing employment changes can utilize the Pantry by browsing and selecting non-perishable items during operation hours or by pre-ordering bags for pick up. 
+
+For additional support related to basic needs, students are encouraged to visit the Basic Needs Hub. For more information about the Food Pantry, you can visit [this link](https://rochester.edu/college/wcsa/programs/food-pantry/about.html).
+
+Question: 
+Answer:
+The University of Rochester handles grade disputes by encouraging students to first discuss the matter with their course instructor as soon as possible after receiving their grade. If there are specific guidelines for a grade appeal in the syllabus or provided by the instructor, students should follow those. If a grading error is confirmed, the instructor is responsible for correcting it.
+
+If a satisfactory resolution cannot be reached through discussion with the instructor, students have the option to request a formal review by submitting a complaint form. This formal appeal process typically involves submitting a request for review to the appropriate University authority, who will investigate the matter.
+
+For more details on grade disputes and the appeal process, you can visit the source URL here: [University of Rochester Exams and Grades](https://rochester.edu/college/summer/resources/exams-grades.html).
+
+Question: 
+Answer:
+The provided context does not contain specific information about internship or co-op programs available specifically for nursing students. For more details on this topic, I recommend visiting the University of Rochester School of Nursing website at https://son.rochester.edu/academics/index.html.
+
+Question: 
+Answer:
+The provided context does not contain information regarding a specific "Hajim honors program" or its requirements and application process. For more information about the Hajim School of Engineering and Applied Sciences programs, you may visit their website at [hajim.rochester.edu](https://hajim.rochester.edu).
+
+Question: 
+Answer:
+The Paul J. Burgett Intercultural Center offers several resources and programs for students, including:
+
+1. Promotion of cultural awareness and inclusivity across the campus.
+2. The One Community Program, which is a panel discussion held during orientation and welcome week for first-year, transfer, and exchange students.
+3. A variety of events, workshops, and services through the URochester’s Life Team, which is a student space within the center.
+
+For more information, students can email bic@rochester.edu. You can find additional details at [the University of Rochester's website](https://rochester.edu/college/bic).
+
+Question: 
+Answer:
+First-year students in STEM can benefit from the STEM-Gems program, which is specifically designed to help historically at-risk undergraduates achieve success in their academic pursuits. The program offers assistance with deciding on a major, ensuring proper math placement, course selection, academic performance, enrolling in summer programs, and participating in professional organizations. 
+
+Additionally, the Center for Advising Services provides comprehensive academic advising, which can help first-year students navigate their academic needs effectively.
+
+For more details, you can visit the following sources: 
+
+- STEM-Gems program: [STEM-Gems](https://hajim.rochester.edu/undergraduate/special-programs/stem-gems.html)
+- Center for Advising Services: [Center for Advising Services](https://rochester.edu/college/ccas/undergraduate/incoming.html)
+
+Question: 
+Answer:
+To officially declare a cluster, you need to follow the procedures outlined by the University of Rochester. Generally, this involves reaching out to the undergraduate advisor in the relevant department to propose your cluster. If the department agrees, you will then need to submit a Cluster Exception form.
+
+Regarding the rules around cluster selection:
+- Each cluster must contain a minimum of twelve credits of coursework, typically equivalent to three courses.
+- The average grade within the cluster must be C or better.
+- Each cluster should include at least two courses from the same academic division (Humanities, Social sciences, or Natural sciences and engineering).
+
+For more detailed information and specific procedures, you can visit the links provided in the context, such as the page on clusters [here](https://rochester.edu/college/ccas/undergraduate/curriculum/clusters.html).
+
+Question: 
+Answer:
+The provided context does not contain information regarding the University of Rochester's policy on recording lectures or classes. Therefore, I cannot provide an answer based on the given information. Please check the university's official website or contact them directly for more details on this topic.
+
+Question: 
+Answer:
+The provided context does not contain specific steps for requesting a double room or single room in the residence halls. For detailed procedures regarding housing requests, you may need to consult the official resources or contact the Office for Residential Life and Housing Services at the University of Rochester directly. More information can be found at [this link](https://rochester.edu/reslife/first-year/resources-faqs.html).
+
+Question: 
+Answer:
+Students at the University of Rochester facing unexpected hardship have access to several financial support options:
+
+1. **Emergency Loan Program**: This program offers loans up to $300 for undergraduate students and up to $400 for graduate students to assist with unexpected expenses. These loans cannot be used to pay off university debts. Interested students should email urdeanofstudent@rochester.edu to schedule an appointment for a brief application and must bring their University ID.
+
+2. **Basic Needs Hub**: This hub provides urgent necessities, such as clothing and emergency shelter, and offers short-term financial assistance in unanticipated situations, generally ranging from $100 to $300 per request. The Hub prioritizes students with the highest financial need, but assistance does not need to be repaid.
+
+For more detailed information on these programs, you can visit the following sources:
+- Emergency Loan Program: [Emergency Loan Program](https://rochester.edu/college/odos/services/emergency-loan.html)
+- Basic Needs Hub: [Basic Needs Hub](https://rochester.edu/students/support)
+
+Question: 
+Answer:
+To get an independent study course approved and registered, you need to follow these steps:
+
+1. **Plan the Course**: Work with a full-time faculty instructor who will guide you and evaluate your work at the end of the semester.
+   
+2. **Develop a Proposal**: Create a written proposal for your independent study, typically 2-3 pages long, which may include elements like a bibliography. It's advisable to consult with your faculty advisor on what to include in the proposal.
+
+3. **Obtain Approval**: Your completed proposal and the online Independent Study Form must be reviewed and approved by:
+   - The faculty advisor
+   - The chair of the department
+   - The appropriate Dean (Senior Associate Dean of Academic and Student Affairs for undergraduates, Associate Dean of Graduate Studies for graduate students)
+
+4. **Submit the Independent Study Form**: You must submit the approved Independent Study Form. Confirmation of approval is indicated by receiving your copy of the form by mail.
+
+5. **Registration**: The actual registration will happen under the appropriate subject heading and numbered course (e.g., 290 for undergraduate courses). Regular tuition charges apply.
+
+You can add independent study courses until the end of the third full week of classes, but it's important to leave enough time for the approval process and to substitute another course if needed. For more information, you can visit [the University of Rochester Registrar's page](https://rochester.edu/registrar/students/registration/undergraduate.html).
+
+Question: 
+Answer:
+The University of Rochester supports students with mental health conditions during exam periods through various resources aimed at promoting well-being and managing stress. The University Counseling Center (UCC) provides mental health care, including free 24/7 mental health support in many languages, which can be especially helpful during high-stress times like exams. They offer assessments and treatment plans tailored to individual needs, and students can schedule appointments with clinicians.
+
+Additionally, the Mindful University Project provides resources such as mindfulness classes, meditation sittings, and workshops that can help students cope with stress and anxiety. These initiatives are designed to improve mental well-being and enhance students' resilience during challenging times.
+
+For more information on the resources available, you can visit the University Counseling Center's website at https://rochester.edu/uhs/ucc.
+
+Question: 
+Answer:
+The Warner School of Education offers several programs for working professionals, including:
+
+1. Counseling: School and mental health counseling, available as Master's or Certificate with fully online options.
+2. Educational Leadership: Prepares leaders for K-12 schools with certification programs, available as Master's or Certificate and fully online.
+3. Health Professions Education: Supports professionals in teaching and educational roles in healthcare; available as Master's or EdD with fully online options.
+4. Higher Education: Serves professionals in administration and student affairs; available as Master's or EdD/PhD.
+5. Program Evaluation: Trains students to analyze projects and policies; available as Master's or Certificate.
+6. Online Teaching and Learning: A master's program that prepares educators to deliver online instruction effectively, with a focus on customizable learning paths.
+
+Many of these programs offer flexibility through fully online coursework, making them particularly appealing to busy professionals. You can find more details on their website: [Warner School of Education & Human Development](https://warner.rochester.edu/degree).
+
+Question: 
+Answer:
+The provided context does not contain information regarding the University of Rochester's policy on deferred enrollment for admitted students. Therefore, I cannot answer your question based on the available information. You may want to check the university's official website or contact the admissions office for more details.
+
+Question: 

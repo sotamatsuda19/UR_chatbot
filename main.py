@@ -22,11 +22,12 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     question: str
+    history: list[dict] = []
 
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    answer = ask(request.question)
+    answer = ask(request.question, request.history)
     return {"answer": answer}
 
 

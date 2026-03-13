@@ -54,17 +54,20 @@ def build_context(docs: list[str], metadatas: list[dict]) -> str:
     return "\n\n---\n\n".join(chunks)
 
 
-def ask(question: str) -> str:
+def ask(question: str, history: list[dict] = []) -> str:
     docs, metadatas = retrieve(question)
     docs, metadatas = rerank(question, docs, metadatas)
     context = build_context(docs, metadatas)
 
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        *history,
+        {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"},
+    ]
+
     response = client.chat.completions.create(
         model=CHAT_MODEL,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user",   "content": f"Context:\n{context}\n\nQuestion: {question}"},
-        ],
+        messages=messages,
     )
 
     answer = response.choices[0].message.content

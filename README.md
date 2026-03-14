@@ -1,22 +1,41 @@
 # University of Rochester Chatbot
 
-An AI-powered chatbot that answers questions about the University of Rochester — academics, campus life, admissions, housing, and more.
+> **An AI assistant that answers your questions about the University of Rochester.**
 
-## Demo
+🔗 **[Try it live](https://urchatbot.sotamatsuda.com)**
 
-> Try it live: [ur-chatbot.onrender.com](https://ur-chatbot.onrender.com)
+---
+
+## What It Does
+
+Ask anything about the University of Rochester and get accurate, sourced answers in seconds.
+
+- Academics, majors, and course requirements
+- Campus life, housing, and dining
+- Admissions, financial aid, and deadlines
+- Research opportunities and student resources
+
+Every answer includes a source URL so you can verify the information directly.
 
 ---
 
 ## How It Works
 
-This project uses a **RAG (Retrieval-Augmented Generation)** pipeline:
+This chatbot is built on a **RAG (Retrieval-Augmented Generation)** pipeline — a technique that grounds AI responses in real, curated data rather than relying on the model's general knowledge alone.
 
-1. **Embed** — the user's question is converted into a vector using OpenAI's `text-embedding-3-small`
-2. **Retrieve** — the top 20 most semantically similar chunks are fetched from a local ChromaDB vector database built from UR web content
-3. **Rerank** — Cohere's `rerank-multilingual-v3.0` narrows those 20 chunks down to the top 5 most relevant
-4. **Generate** — the 5 chunks are passed as context to `gpt-4o-mini`, which generates a grounded answer with source URLs
-5. **History** — previous messages in the session are included so the model understands follow-up questions
+```
+Your question
+     ↓
+Converted into a vector (OpenAI Embeddings)
+     ↓
+Top 20 relevant chunks retrieved from a UR knowledge base (ChromaDB)
+     ↓
+Reranked to the top 5 most relevant (Cohere Reranker)
+     ↓
+Answer generated with source citations (GPT-4o mini)
+```
+
+The chatbot also remembers the conversation — so follow-up questions like *"Can you elaborate on that?"* work naturally.
 
 ---
 
@@ -24,58 +43,30 @@ This project uses a **RAG (Retrieval-Augmented Generation)** pipeline:
 
 | Layer | Technology |
 |---|---|
-| Frontend | HTML, React (CDN), Tailwind CSS |
+| Frontend | HTML, React, Tailwind CSS |
 | Backend | Python, FastAPI, Uvicorn |
-| Vector Database | ChromaDB (local) |
+| Vector Database | ChromaDB |
 | Embeddings | OpenAI `text-embedding-3-small` |
 | Language Model | OpenAI `gpt-4o-mini` |
 | Reranker | Cohere `rerank-multilingual-v3.0` |
-| Hosting | Render (free tier) |
+| Session Logging | Supabase (PostgreSQL) |
+| Hosting | Render |
 
 ---
 
 ## Project Structure
 
 ```
-├── main.py               # FastAPI app — /chat endpoint
-├── query_chroma.py       # RAG pipeline (embed, retrieve, rerank, generate)
-├── requirements.txt      # Python dependencies
-├── chroma_db/            # Local vector database
+├── main.py            # FastAPI backend — /chat endpoint
+├── query_chroma.py    # RAG pipeline (embed → retrieve → rerank → generate)
+├── requirements.txt   # Python dependencies
+├── chroma_db/         # Vector database built from UR web content
 └── frontend/
-    ├── index.html        # Entry point
-    ├── app.js            # React chatbot UI
-    └── logo.png          # University of Rochester logo
+    ├── index.html     # Entry point
+    ├── app.js         # React chat UI
+    └── logo.png       # University of Rochester logo
 ```
 
 ---
 
-## Running Locally
-
-**Backend**
-```bash
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-**Frontend**
-```bash
-cd frontend
-python3 -m http.server 8080
-```
-Then open `http://localhost:8080`.
-
-**Environment Variables**
-```
-OPENAI_API_KEY=your_key
-COHERE_API_KEY=your_key
-```
-
----
-
-## Deployment
-
-The backend is deployed on **Render** as a Web Service:
-- Build command: `pip install -r requirements.txt`
-- Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-
-The frontend is a static site served directly from the `frontend/` folder.
+*Built by [Sota Matsuda](https://sotamatsuda.com)*

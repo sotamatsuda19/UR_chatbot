@@ -14,6 +14,7 @@ const EMPTY_PROMPTS = [
 ];
 
 const randomPrompt = EMPTY_PROMPTS[Math.floor(Math.random() * EMPTY_PROMPTS.length)];
+const sessionId = crypto.randomUUID();
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
@@ -45,7 +46,7 @@ function Chatbot() {
       const res  = await fetch(`${window.__API_BASE__}/chat`, {
         method:  "POST",
         headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify({ question, history }),
+        body:    JSON.stringify({ question, history, session_id: sessionId }),
       });
       const data = await res.json();
       setMessages((prev) => [...prev, { role: "assistant", text: data.answer }]);

@@ -37,13 +37,13 @@ class ChatRequest(BaseModel):
 
 @app.post("/chat")
 @limiter.limit("10/minute")
-def chat(request: ChatRequest, request_obj: Request):
-    answer = ask(request.question, request.history)
+def chat(request: Request, body: ChatRequest):
+    answer = ask(body.question, body.history)
 
-    if request.session_id:
+    if body.session_id:
         try:
-            messages = request.history + [
-                {"role": "user",      "text": request.question},
+            messages = body.history + [
+                {"role": "user",      "text": body.question},
                 {"role": "assistant", "text": answer},
             ]
             conn = get_db()
@@ -54,7 +54,7 @@ def chat(request: ChatRequest, request_obj: Request):
                 ON CONFLICT (session_id) DO UPDATE
                 SET messages = EXCLUDED.messages,
                     last_active = EXCLUDED.last_active
-            """, (request.session_id, json.dumps(messages), datetime.utcnow(), datetime.utcnow()))
+            """, (body.session_id, json.dumps(messages), datetime.utcnow(), datetime.utcnow()))
             conn.commit()
             cur.close()
             conn.close()

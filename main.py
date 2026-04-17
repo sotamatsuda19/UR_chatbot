@@ -43,8 +43,8 @@ def chat(request: Request, body: ChatRequest):
     if body.session_id:
         try:
             messages = body.history + [
-                {"role": "user",      "text": body.question},
-                {"role": "assistant", "text": answer},
+                {"role": "user",      "content": body.question},
+                {"role": "assistant", "content": answer},
             ]
             conn = get_db()
             cur  = conn.cursor()

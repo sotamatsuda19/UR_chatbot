@@ -1,7 +1,10 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 import psycopg2
 import os
 import json
@@ -9,8 +12,10 @@ from datetime import datetime
 
 from query_chroma import ask
 
-
-app = FastAPI()
+limiter = Limiter(key_func=get_remote_address)
+app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,7 +36,8 @@ class ChatRequest(BaseModel):
 
 
 @app.post("/chat")
-def chat(request: ChatRequest):
+@limiter.limit("10/minute")
+def chat(request: ChatRequest, request_obj: Request):
     answer = ask(request.question, request.history)
 
     if request.session_id:

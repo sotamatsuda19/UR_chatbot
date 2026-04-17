@@ -33,30 +33,11 @@ BLOCKED_PATTERNS = [
 ]
 
 SEED_URLS = [
-    "https://www.rochester.edu/college/ccas/handbook/probation-suspension.html",
-    "https://www.rochester.edu/adminfinance/bursar/payments-and-refunds/payments-and-refunds/",
-    "https://www.rochester.edu/college/ccas/handbook/grade-appeal.html",
-    "https://www.rochester.edu/college/ccas/handbook/grading-system.html",
-    "https://tech.rochester.edu/software/",
-    "https://www.rochester.edu/college/fsa/students/programming.html",
-    "https://www.rochester.edu/college/ccas/handbook/enrollment.html",
-    "https://www.rochester.edu/college/gradstudies/admissions/faq.html",
-    "https://www.rochester.edu/college/ccas/handbook/honors.html",
-    "https://www.rochester.edu/college/health/experience/clinical.html",
-    "https://www.rochester.edu/internships/",
-    "https://www.rochester.edu/internships/students/faq.html",
-    "https://www.rochester.edu/college/omsa/about/index.html",
-    "https://www.rochester.edu/college/omsa/programs/index.html",
-    "https://www.rochester.edu/registrar/requests/enrollment-verification.html",
-    "https://www.rochester.edu/registrar/requests/transcripts.html",
-    "https://www.rochester.edu/reslife/upperclass/lottery.html",
-    "https://www.rochester.edu/reslife/services/item-rental.html",
-    "https://www.rochester.edu/college/honesty/students/faq.html",
-    "https://www.rochester.edu/college/academics/handbooks.html"
+    "https://ccc.rochester.edu/club_signup?view=all&"
 ]
 
 # depth-0 = seed pages, depth-1 = their sub-links, depth-2 = no further links
-SEED_LINKS_PER_DEPTH = {0: 8, 1: 5, 2: 0}
+SEED_LINKS_PER_DEPTH = {0: 100, 1: 0, 2: 0}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -7,10 +7,10 @@ const EMPTY_PROMPTS = [
   "Got a question about UR? I'm here.",
   "What can I help you with today?",
   "Wondering about majors or research? Just ask.",
-  "Ask me anything — academics, housing, dining.",
+  "Ask me anything, academics, housing, dining.",
   "Not sure where to start? Just ask.",
   "Looking for info about UR? I've got you.",
-  "Academics or campus life — ask away.",
+  "Academics or campus life? Ask away.",
 ];
 
 const randomPrompt = EMPTY_PROMPTS[Math.floor(Math.random() * EMPTY_PROMPTS.length)];
@@ -83,7 +83,12 @@ function Chatbot() {
         {isEmpty ? (
           /* ── Empty state: input centered vertically ── */
           <div className="flex flex-col justify-center flex-1 gap-8">
-            <p className="text-center text-slate-600 text-lg sm:text-xl font-medium">{randomPrompt}</p>
+            <div className="flex flex-col gap-2">
+              <p className="text-center text-slate-600 text-lg sm:text-xl font-medium">{randomPrompt}</p>
+              <p className="text-center text-xs text-slate-400">
+                An unofficial, student-led project — not affiliated with the University of Rochester.
+              </p>
+            </div>
             <form onSubmit={handleSubmit} className="flex gap-2">
               <input
                 type="text"
@@ -166,7 +171,7 @@ function Chatbot() {
             </form>
 
             <p className="text-xs text-slate-400 text-center pb-2">
-              This chatbot can make mistakes. Verify important information with official UR sources.
+              An unofficial, student-led project — not affiliated with the University of Rochester. This chatbot can make mistakes; verify important information with official UR sources.
             </p>
           </>
         )}

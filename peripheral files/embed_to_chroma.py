@@ -57,16 +57,22 @@ def main():
         print(f"Removed {duplicates} duplicate(s) — {len(seen)} unique chunks remain")
     documents = list(seen.values())
 
-    # Get or create collection (delete first to allow clean re-runs)
-    existing = [c.name for c in db.list_collections()]
-    if COLLECTION in existing:
-        print(f"Collection '{COLLECTION}' already exists — deleting for fresh embed")
-        db.delete_collection(COLLECTION)
-
     collection = db.get_or_create_collection(
         name=COLLECTION,
         metadata={"hnsw:space": "cosine"},
     )
+
+    existing_ids = set(collection.get(include=[])["ids"])
+    if existing_ids:
+        before = len(documents)
+        documents = [d for d in documents
+                     if hashlib.md5(f"{d.get('url') or ''}__chunk_{d.get('chunk_index') or 0}".encode()).hexdigest()
+                     not in existing_ids]
+        print(f"Skipping {before - len(documents)} chunk(s) already in collection — {len(documents)} new to embed")
+
+    if not documents:
+        print("Nothing new to embed. Exiting.")
+        return
 
     total    = len(documents)
     embedded = 0

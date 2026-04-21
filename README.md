@@ -29,11 +29,16 @@ Your question
 Expanded into 3 distinct sub-queries that resolve pronouns from the
 conversation and cover different angles of the question (GPT-4o mini)
      ↓
+Question classified as undergrad / grad / both so that off-audience
+chunks can be filtered out (GPT-4o mini). Chunks are pre-tagged with
+the same labels at ingest time based on their source URL.
+     ↓
 Each query (original + 3 sub-queries) converted into a vector
 (OpenAI Embeddings)
      ↓
-Top 8 chunks retrieved per query from a UR knowledge base, then
-deduplicated into a single candidate pool (ChromaDB)
+Top 8 chunks retrieved per query from a UR knowledge base — filtered
+by audience tag — then deduplicated into a single candidate pool
+(ChromaDB)
      ↓
 Reranked to the top 5 most relevant (Cohere Reranker)
      ↓

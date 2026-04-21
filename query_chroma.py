@@ -80,12 +80,10 @@ def embed_queries(texts: list[str]) -> list[list[float]]:
 def retrieve(queries: list[str], audience: str) -> tuple[list[str], list[dict]]:
     embeddings = embed_queries(queries)
 
-    if audience == "undergrad":
-        where = {"audience": {"$in": ["undergrad", "both"]}}
-    elif audience == "grad":
+    if audience == "grad":
         where = {"audience": {"$in": ["grad", "both"]}}
     else:
-        where = None
+        where = {"audience": {"$in": ["undergrad", "both"]}}
 
     results = collection.query(
         query_embeddings=embeddings,

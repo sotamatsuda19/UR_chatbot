@@ -26,6 +26,29 @@ db     = chromadb.PersistentClient(path=CHROMA_DIR)
 collection = db.get_collection(COLLECTION)
 
 
+def classify_audience(question: str, history: list[dict]) -> str:
+    system = (
+        """Classify whether the student's question is about undergraduate programs, graduate programs, or both.
+        Use the conversation history to resolve ambiguous references and pronouns.
+        Return only a JSON object: {"audience": "undergrad"} or {"audience": "grad"} or {"audience": "both"}.
+        Use "both" only when the question is genuinely level-agnostic (e.g. general campus life, dining, the university's history) or when the level is truly ambiguous."""
+    )
+    messages = [
+        {"role": "system", "content": system},
+        *history,
+        {"role": "user", "content": question},
+    ]
+    response = client.chat.completions.create(
+        model=CHAT_MODEL,
+        messages=messages,
+        response_format={"type": "json_object"},
+    )
+    audience = json.loads(response.choices[0].message.content).get("audience", "both")
+    if audience not in ("undergrad", "grad", "both"):
+        audience = "both"
+    return audience
+
+
 def expand_query(question: str, history: list[dict]) -> list[str]:
     system = (
         f"""Rewrite the student's question into {NUM_SUBQUERIES} short, standalone keyword search queries that together cover what the student likely wants to know. 
@@ -54,9 +77,21 @@ def embed_queries(texts: list[str]) -> list[list[float]]:
     return [d.embedding for d in response.data]
 
 
-def retrieve(queries: list[str]) -> tuple[list[str], list[dict]]:
+def retrieve(queries: list[str], audience: str) -> tuple[list[str], list[dict]]:
     embeddings = embed_queries(queries)
-    results = collection.query(query_embeddings=embeddings, n_results=PER_QUERY_K)
+
+    if audience == "undergrad":
+        where = {"audience": {"$in": ["undergrad", "both"]}}
+    elif audience == "grad":
+        where = {"audience": {"$in": ["grad", "both"]}}
+    else:
+        where = None
+
+    results = collection.query(
+        query_embeddings=embeddings,
+        n_results=PER_QUERY_K,
+        where=where,
+    )
 
     seen_ids: set[str] = set()
     docs: list[str] = []
@@ -93,7 +128,8 @@ def build_context(docs: list[str], metadatas: list[dict]) -> str:
 
 def ask(question: str, history: list[dict] = []) -> str:
     queries = expand_query(question, history)
-    docs, metadatas = retrieve(queries)
+    audience = classify_audience(question, history)
+    docs, metadatas = retrieve(queries, audience)
     docs, metadatas = rerank(question, docs, metadatas)
     context = build_context(docs, metadatas)
 

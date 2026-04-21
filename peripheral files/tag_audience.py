@@ -5,7 +5,7 @@ from collections import Counter
 import chromadb
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CHROMA_DIR = os.path.join(SCRIPT_DIR, "chroma_db")
+CHROMA_DIR = os.path.join(SCRIPT_DIR, "..", "chroma_db")
 COLLECTION = "ur_knowledge"
 BATCH_SIZE = 500
 
@@ -13,7 +13,7 @@ UNDERGRAD_PATTERNS = [
     r"/undergraduate(/|\.|$)",
     r"/undergrad(/|\.|$)",
     r"/ugrad(/|\.|$)",
-    r"/college/",
+    r"/college/(?!gradstudies(/|$))",
     r"/admissions/apply",
     r"/admissions/undergraduate",
     r"/admissions/first-year",

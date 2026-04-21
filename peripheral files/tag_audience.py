@@ -45,13 +45,17 @@ def classify(url: str) -> str:
         return "both"
     u = url.lower()
 
-    for p in UNDERGRAD_PATTERNS:
-        if re.search(p, u):
-            return "undergrad"
-
-    for p in GRAD_PATTERNS:
-        if re.search(p, u):
-            return "grad"
+    is_undergrad = any(re.search(p, u) for p in UNDERGRAD_PATTERNS)
+    is_grad = any(re.search(p, u) for p in GRAD_PATTERNS)
+    
+    if is_undergrad and is_grad:
+        return "both"
+        
+    if is_undergrad:
+        return "undergrad"
+        
+    if is_grad:
+        return "grad"
 
     return "both"
 

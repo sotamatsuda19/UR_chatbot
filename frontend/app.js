@@ -20,7 +20,6 @@ function Chatbot() {
   const [messages, setMessages] = useState([]);
   const [input, setInput]       = useState("");
   const [loading, setLoading]   = useState(false);
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
   const bottomRef               = useRef(null);
   const isEmpty                 = messages.length === 0;
 
@@ -50,7 +49,6 @@ function Chatbot() {
       });
       const data = await res.json();
       setMessages((prev) => [...prev, { role: "assistant", text: data.answer }]);
-      setIsFirstLoad(false);
     } catch (err) {
       setMessages((prev) => [...prev, { role: "assistant", text: "Something went wrong. Please try again." }]);
     } finally {
@@ -131,19 +129,12 @@ function Chatbot() {
               ))}
 
               {loading && (
-                <div className="fade-up flex flex-col gap-2">
-                  <div className="flex justify-start">
-                    <div className="message-bubble bg-slate-100 px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1 items-center">
-                      <span className="dot w-2 h-2 bg-slate-400 rounded-full inline-block"></span>
-                      <span className="dot w-2 h-2 bg-slate-400 rounded-full inline-block"></span>
-                      <span className="dot w-2 h-2 bg-slate-400 rounded-full inline-block"></span>
-                    </div>
+                <div className="fade-up flex justify-start">
+                  <div className="message-bubble bg-slate-100 px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1 items-center">
+                    <span className="dot w-2 h-2 bg-slate-400 rounded-full inline-block"></span>
+                    <span className="dot w-2 h-2 bg-slate-400 rounded-full inline-block"></span>
+                    <span className="dot w-2 h-2 bg-slate-400 rounded-full inline-block"></span>
                   </div>
-                  {isFirstLoad && (
-                    <p className="text-xs text-slate-400 text-left pl-1">
-                      The server is waking up — your first response may take up to 30 seconds. Thanks for your patience!
-                    </p>
-                  )}
                 </div>
               )}
 

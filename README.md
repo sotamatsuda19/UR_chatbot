@@ -26,9 +26,14 @@ This chatbot is built on a **RAG (Retrieval-Augmented Generation)** pipeline —
 ```
 Your question
      ↓
-Converted into a vector (OpenAI Embeddings)
+Expanded into 3 distinct sub-queries that resolve pronouns from the
+conversation and cover different angles of the question (GPT-4o mini)
      ↓
-Top 20 relevant chunks retrieved from a UR knowledge base (ChromaDB)
+Each query (original + 3 sub-queries) converted into a vector
+(OpenAI Embeddings)
+     ↓
+Top 8 chunks retrieved per query from a UR knowledge base, then
+deduplicated into a single candidate pool (ChromaDB)
      ↓
 Reranked to the top 5 most relevant (Cohere Reranker)
      ↓
@@ -58,7 +63,7 @@ The chatbot also remembers the conversation — so follow-up questions like *"Ca
 
 ```
 ├── main.py            # FastAPI backend — /chat endpoint
-├── query_chroma.py    # RAG pipeline (embed → retrieve → rerank → generate)
+├── query_chroma.py    # RAG pipeline (expand → embed → retrieve → rerank → generate)
 ├── requirements.txt   # Python dependencies
 ├── chroma_db/         # Vector database built from UR web content
 └── frontend/

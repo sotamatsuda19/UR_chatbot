@@ -6,8 +6,8 @@ import chromadb
 from openai import OpenAI
 
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE  = os.path.join(SCRIPT_DIR, "gap_fill_data.json")
-CHROMA_DIR  = os.path.join(SCRIPT_DIR, "chroma_db")
+INPUT_FILE  = os.path.join(SCRIPT_DIR, "..", "json data", "gap_fill_data.json")
+CHROMA_DIR  = os.path.join(SCRIPT_DIR, "..", "chroma_db")
 
 EMBED_MODEL = "text-embedding-3-small"
 COLLECTION  = "ur_knowledge"

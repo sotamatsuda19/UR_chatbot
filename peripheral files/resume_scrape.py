@@ -15,9 +15,10 @@ client = OpenAI()
 # ─────────────────────────────────────────────────────────────────────────────
 
 SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_FILE   = os.path.join(SCRIPT_DIR, "gap_fill_data.json")
-UNIFIED_FILE  = os.path.join(SCRIPT_DIR, "unified_ur_data.json")
-CAMPUS_FILE   = os.path.join(SCRIPT_DIR, "campus_life_data.json")
+DATA_DIR      = os.path.join(SCRIPT_DIR, "..", "json data")
+OUTPUT_FILE   = os.path.join(DATA_DIR, "gap_fill_data.json")
+UNIFIED_FILE  = os.path.join(DATA_DIR, "unified_ur_data.json")
+CAMPUS_FILE   = os.path.join(DATA_DIR, "campus_life_data.json")
 SLEEP_SECONDS = 3.0
 
 CHUNK_SIZE    = 1500
@@ -33,11 +34,107 @@ BLOCKED_PATTERNS = [
 ]
 
 SEED_URLS = [
-    "https://ccc.rochester.edu/club_signup?view=all&"
+    # Q24 / Q37 / Q39 / Q43 / Q47 — University Facts (class size, ratio, yield, ED/RD, demographics, popular majors)
+    "https://admissions.rochester.edu/campus-life/university-facts/",
+
+    # Q49 — Rochester Curriculum (NO distribution requirements) + Primary Writing Requirement
+    "https://www.rochester.edu/about/curriculum.html",
+    "https://admissions.rochester.edu/academics/rochester-curriculum/",
+    "https://www.rochester.edu/college/new-student/guide/curriculum/index.html",
+    "https://writing.rochester.edu/undergraduate/index.html",
+    "https://www.rochester.edu/college/ccas/handbook/primary-writing-requirement.html",
+    "https://www.rochester.edu/college/ccas/handbook/degree-requirements.html",
+
+    # Q44 — $800 enrollment deposit / May 1
+    "https://admissions.rochester.edu/visit/admittedstudents/",
+    "https://admissions.rochester.edu/applying/dates-and-deadlines/",
+    "https://www.rochester.edu/bulletin/college/admissions.html",
+
+    # Q50 — Welcome Week dates / orientation
+    "https://www.rochester.edu/college/orientation/programs/welcome-week/fall/index.html",
+    "https://www.rochester.edu/college/orientation/arrival/fall/index.html",
+    "https://www.rochester.edu/college/orientation/students/timeline.html",
+    "https://www.rochester.edu/college/orientation/programs/pre-semester/ur-foot/index.html",
+    "https://www.rochester.edu/reslife/first-year/important-dates.html",
+
+    # Q40 — Kearns Center, 1st Gen Society, first-gen resources
+    "https://www.rochester.edu/college/kearnscenter/undergraduate/index.html",
+    "https://www.rochester.edu/college/kearnscenter/undergraduate/first-generation.html",
+    "https://www.rochester.edu/college/kearnscenter/undergraduate/mcnair.html",
+    "https://www.rochester.edu/college/kearnscenter/pre-college/upward-bound.html",
+    "https://ccc.rochester.edu/1stgen/home/",
+    "https://www.rochester.edu/parents/firstgen/resources.html",
+    "https://careereducation.rochester.edu/channels/first-generation/",
+
+    # Q9 — REMS essays
+    "https://admissions.rochester.edu/academics/rems/",
+    "https://admissions.rochester.edu/academics/combined-degree-programs/",
+
+    # Q20 — Intensive English Program / ESL bridge
+    "https://www.rochester.edu/iso/living/english/",
+    "https://admissions.rochester.edu/applying/international-students/international-faqs/",
+    "https://www.rochester.edu/college/languages/students/resources.html",
+
+    # Q43 — International undergrad breakdown + global facts
+    "https://admissions.rochester.edu/applying/international-students/",
+    "https://www.rochester.edu/office-global-engagement/about/facts/",
+
+    # Q11 — DACA / undocumented students
+    "https://www.rochester.edu/college/CCAS/undergraduate/daca/index.html",
+    "https://www.rochester.edu/college/ccas/undergraduate/daca/support.html",
+    "https://careereducation.rochester.edu/resources/undoc-daca-faqs/",
+
+    # Q48 — 4+1 pathways (Warner, Public Health, GRADE, HEAL, Math)
+    "https://www.warner.rochester.edu/degree/undergraduate/four-plus-one",
+    "https://www.warner.rochester.edu/degree/undergraduate",
+    "https://admissions.rochester.edu/academics/grade/",
+    "https://www.urmc.rochester.edu/public-health-sciences/educational-programs/accelerated-public-health-program",
+    "https://admissions.rochester.edu/academics/heal/",
+    "https://www.sas.rochester.edu/mth/undergraduate/four-plus-one.html",
+
+    # Q27 — Interdepartmental Studies Major (A&S)
+    "https://www.rochester.edu/college/msc/interdepartmental/",
+    "https://www.rochester.edu/college/msc/interdepartmental/plan.html",
+    "https://www.sas.rochester.edu/interdepartmental/faq.html",
+    "https://www.rochester.edu/college/ccas/handbook/interdepartmental-studies.html",
+
+    # Q8 — A&S ↔ Hajim switch
+    "https://www.rochester.edu/college/ccas/handbook/transferring-within-ur.html",
+    "https://www.rochester.edu/college/sophomores/declare/engineering.html",
+
+    # Q22 — BA vs BS Computer Science
+    "https://www.cs.rochester.edu/undergraduate/degree-requirements.html",
+    "https://www.cs.rochester.edu/undergraduate/bs-requirements.html",
+    "https://www.cs.rochester.edu/undergraduate/student_life/FAQ.html",
+
+    # Q25 — Pre-law advising (Greene Center, Pre-Law Society)
+    "https://careereducation.rochester.edu/organizations/pre-law-society/",
+    "https://ccc.rochester.edu/pls/home/",
+    "https://www.sas.rochester.edu/psc/undergraduate/pre-law-guide.html",
+
+    # Q30 — Greek life delayed recruitment
+    "https://www.rochester.edu/college/fsa/about/faq.html",
+    "https://www.rochester.edu/college/fsa/students/join.html",
+
+    # Q35 / Q36 — Meliora Scholarship ($14K avg), Bausch & Lomb ($5K+ + fee waiver)
+    "https://www.rochester.edu/financial-aid/scholarships/",
+    "https://admissions.rochester.edu/high-school-awards/",
+    "https://www.sas.rochester.edu/humanities/students/meliora-scholars.html",
+
+    # Q42 — UCC 10 free sessions + TAO/TELUS
+    "https://www.rochester.edu/uhs/ucc/services/",
+    "https://www.rochester.edu/uhs/ucc/appointments/",
+
+    # Q47 — academic programs catalog (for popular-majors context)
+    "https://www.rochester.edu/academics/programs.html",
+
+    # Q19 — holistic character / ethical review
+    "https://admissions.rochester.edu/applying/how-to-apply/",
 ]
 
-# depth-0 = seed pages, depth-1 = their sub-links, depth-2 = no further links
-SEED_LINKS_PER_DEPTH = {0: 100, 1: 0, 2: 0}
+# depth-0 = seed pages (scrape each directly, no fan-out).
+# Set depth-0 > 0 to let GPT pull additional sub-links from each curated page.
+SEED_LINKS_PER_DEPTH = {0: 2, 1: 0, 2: 0}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
